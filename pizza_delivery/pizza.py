@@ -35,8 +35,10 @@ def find_floor(f, n):
 if __name__ == "__main__":
     floors = int(input("Число этажей: "))
     flat_num = int(input("Номер квартиры: "))
-
-    entrance = find_entrance(floors, flat_num)
-    floor = find_floor(floors, flat_num)
-    print("Подъезд: ", entrance)
-    print("Этаж: ", floor)
+    if floors > 0 and flat_num > 0:
+        entrance = find_entrance(floors, flat_num)
+        floor = find_floor(floors, flat_num)
+        print("Подъезд: ", entrance)
+        print("Этаж: ", floor)
+    else:
+        print("Цифры должны быть больше 0")
