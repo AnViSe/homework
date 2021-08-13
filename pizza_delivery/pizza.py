@@ -17,8 +17,9 @@ def find_entrance(f, n):
     f - число этажей в доме
     n - номер квартиры
     """
-
-    return 0
+    q = f * 4  # квартир в каждом подъезде
+    r = n // q if n % q == 0 else n // q + 1
+    return r
 
 
 def find_floor(f, n):
@@ -26,8 +27,9 @@ def find_floor(f, n):
     f - число этажей в доме
     n - номер квартиры
     """
-
-    return 0
+    ff = n // 4 if n % 4 == 0 else n // 4 + 1  # Этаж квартиры в одноподъездном доме
+    r = ff % f if ff % f > 0 else f  # Этаж квартиры в своем подъезде
+    return r
 
 
 if __name__ == "__main__":
@@ -36,4 +38,5 @@ if __name__ == "__main__":
 
     entrance = find_entrance(floors, flat_num)
     floor = find_floor(floors, flat_num)
-    print(entrance, floor)
+    print("Подъезд: ", entrance)
+    print("Этаж: ", floor)
