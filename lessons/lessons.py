@@ -11,7 +11,29 @@
 
 
 def end_of_lesson(n: int) -> (int, int):
-    return 0, 0
+    all_min = 8 * 60
+    # С помощью for и range
+    for i in range(1, n + 1):
+        all_min += 45
+        if i < n:
+            if i % 2 == 0:
+                all_min += 15
+            else:
+                all_min += 5
+    # С помощью while
+    # i = 1
+    # while i <= n:
+    #     all_min += 45
+    #     if i < n:
+    #         if i % 2 == 0:
+    #             all_min += 15
+    #         else:
+    #             all_min += 5
+    #     i += 1
+
+    r_h = all_min // 60
+    r_m = all_min % 60
+    return r_h, r_m
 
 
 if __name__ == "__main__":
