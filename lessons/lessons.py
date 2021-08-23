@@ -11,29 +11,29 @@
 
 
 def end_of_lesson(n: int) -> (int, int):
-    all_min = 8 * 60
+    all_minutes = 8 * 60  # Общее количество минут
     # С помощью for и range
-    for i in range(1, n + 1):
-        all_min += 45
-        if i < n:
-            if i % 2 == 0:
-                all_min += 15
-            else:
-                all_min += 5
+    for i in range(1, n + 1):  # Перебираем уроки от 1 до n
+        all_minutes += 45  # Добавляем длительность урока к общей длительности
+        if i < n:  # Если это не последний урок
+            if i % 2 == 0:  # Для четного урока
+                all_minutes += 15
+            else:  # Для нечетного урока
+                all_minutes += 5
     # С помощью while
     # i = 1
     # while i <= n:
-    #     all_min += 45
+    #     all_minutes += 45
     #     if i < n:
     #         if i % 2 == 0:
-    #             all_min += 15
+    #             all_minutes += 15
     #         else:
-    #             all_min += 5
+    #             all_minutes += 5
     #     i += 1
 
-    r_h = all_min // 60
-    r_m = all_min % 60
-    return r_h, r_m
+    end_hours = all_minutes // 60  # Количество часов
+    end_minutes = all_minutes % 60  # Количество минут
+    return end_hours, end_minutes
 
 
 if __name__ == "__main__":
