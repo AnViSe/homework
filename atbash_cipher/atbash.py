@@ -12,13 +12,26 @@
 
 `Bambarbia, Kirgudu` -> `yznyz iyrzp ritfw f`
 """
+import string
 
 BLOCK_SIZE = 5
 
 
+def revert_char(alpha: str) -> str:
+    if alpha.isalpha():
+        position = string.ascii_lowercase.index(alpha.lower()) + 1
+        return string.ascii_lowercase[-position]
+    elif alpha in string.punctuation or alpha in string.whitespace:
+        return None
+    else:
+        return alpha
+
+
 def atbash_encode(text: str) -> str:
-    pass
+    result = ''.join(revert_char(c) for c in text if revert_char(c))
+    result = ' '.join(result[i:i + BLOCK_SIZE] for i in range(0, len(result), BLOCK_SIZE))
+    return result
 
 
 def atbash_decode(cipher: str) -> str:
-    pass
+    return ''.join(revert_char(c) for c in cipher if revert_char(c))
