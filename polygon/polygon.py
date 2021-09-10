@@ -38,3 +38,4 @@ def polygon_vertices(n: int, r: float = R) -> list:
         vertices.append(vert)
 
     return vertices
+  

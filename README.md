@@ -26,6 +26,12 @@
 - polygon
 - bible
 
+### 5. Loops
+
+- fibonacci
+- numeric_palindrom
+- fizzbuzz
+
 ## Краткая инструкция
 
 1. Установите git и `pytest`
