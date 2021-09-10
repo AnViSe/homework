@@ -27,6 +27,7 @@ R = 3.0
 
 
 def polygon_vertices(n: int, r: float = R) -> list:
+    # Чисто Ваше решение, тем более что с геометрией у меня туго
     angle = pi / 2
     step = 2 * pi / n
     vertices = [(0.0, r)]

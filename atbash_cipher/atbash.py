@@ -22,7 +22,7 @@ def revert_char(alpha: str) -> str:
         position = string.ascii_lowercase.index(alpha.lower()) + 1
         return string.ascii_lowercase[-position]
     elif alpha in string.punctuation or alpha in string.whitespace:
-        return None
+        return
     else:
         return alpha
 
