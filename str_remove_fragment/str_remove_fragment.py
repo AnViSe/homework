@@ -8,4 +8,7 @@
 
 
 def remove_fragment(s: str, sep: str) -> str:
-    pass
+    if s.count(sep) < 2:
+        return s
+    else:
+        return s.partition(sep)[0] + s.rpartition(sep)[2]
